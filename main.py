@@ -34,6 +34,14 @@ def mark_done(tasks, idx):
     else:
         print('Índice inválido.')
 
+def unmark_done(tasks, idx):
+    if 0 <= idx < len(tasks):
+        tasks[idx]['done'] = False
+        save_tasks(tasks)
+        print(f'Tarefa desmarcada como concluída: {tasks[idx]["desc"]}')
+    else:
+        print('Índice inválido.')
+
 def remove_task(tasks, idx):
     if 0 <= idx < len(tasks):
         removed = tasks.pop(idx)
@@ -48,8 +56,9 @@ def main():
         print('\n1. Adicionar tarefa')
         print('2. Listar tarefas')
         print('3. Marcar tarefa como concluída')
-        print('4. Remover tarefa')
-        print('5. Sair')
+        print('4. Desmarcar tarefa como concluída')
+        print('5. Remover tarefa')
+        print('6. Sair')
         op = input('Escolha uma opção: ')
         if op == '1':
             desc = input('Descrição da tarefa: ')
@@ -62,9 +71,13 @@ def main():
             mark_done(tasks, idx)
         elif op == '4':
             list_tasks(tasks)
+            idx = int(input('Número da tarefa para desmarcar como concluída: ')) - 1
+            unmark_done(tasks, idx)
+        elif op == '5':
+            list_tasks(tasks)
             idx = int(input('Número da tarefa para remover: ')) - 1
             remove_task(tasks, idx)
-        elif op == '5':
+        elif op == '6':
             print('Saindo...')
             break
         else:

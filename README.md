@@ -10,6 +10,7 @@ Permite adicionar, listar, marcar como concluída e remover tarefas, salvando tu
 - Adicionar nova tarefa
 - Listar tarefas pendentes e concluídas
 - Marcar tarefa como concluída
+- Desmarcar tarefa como concluída
 - Remover tarefa
 - Salvar e carregar tarefas automaticamente em arquivo JSON (`todo_list.json`)
 
@@ -29,6 +30,7 @@ python main.py
     - Adicionar tarefa
     - Listar tarefas
     - Marcar tarefa como concluída
+    - Desmarcar tarefa como concluída
     - Remover tarefa
     - Sair
 
